@@ -21,10 +21,10 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 
-add_executable(hipnuc_driver src/hipnuc_driver.cpp src/hipnuc_dec.c)
-ament_target_dependencies(hipnuc_driver rclcpp std_msgs sensor_msgs)
+add_executable(hipnuc_imu_driver src/hipnuc_imu_driver.cpp src/hipnuc_dec.c)
+ament_target_dependencies(hipnuc_imu_driver rclcpp std_msgs sensor_msgs)
 
-install(TARGETS hipnuc_driver DESTINATION lib/${PROJECT_NAME})
+install(TARGETS hipnuc_imu_driver DESTINATION lib/${PROJECT_NAME})
 install(DIRECTORY
   config launch
   DESTINATION share/${PROJECT_NAME}

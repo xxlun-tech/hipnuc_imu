@@ -13,8 +13,8 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='hipnuc_imu',
-            executable='hipnuc_driver',
-            name='hipnuc_driver',
+            executable='hipnuc_imu_driver',
+            name='hipnuc_imu_driver',
             parameters=[config],
             output='screen',
         ),

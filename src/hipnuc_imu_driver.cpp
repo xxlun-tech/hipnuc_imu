@@ -24,10 +24,10 @@ using namespace std::chrono_literals;
 using namespace std;
 static hipnuc_raw_t raw;
 
-class HiPNUCDriver : public rclcpp::Node
+class HiPNUCImuDriver : public rclcpp::Node
 {
 public:
-  HiPNUCDriver() : Node("hipnuc_driver")	
+  HiPNUCImuDriver() : Node("hipnuc_driver")	
   {
     this->declare_parameter<std::string>("serial_port", "/dev/ttyUSB0");
     this->declare_parameter<int>("baud_rate", 460800);
@@ -169,7 +169,7 @@ private:
 int main(int argc, const char * argv[])
 {
   rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<HiPNUCDriver>());
+  rclcpp::spin(std::make_shared<HiPNUCImuDriver>());
   rclcpp::shutdown();
 
   return 0;
